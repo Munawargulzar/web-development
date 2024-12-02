@@ -1,0 +1,271 @@
+/* Fonts */
+/* Importing fonts from Google Fonts: Josefin Sans and Protest Guerrilla */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@0;1&family=Protest+Guerrilla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+/* Default Body Styles */
+/* Resetting margins and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Setting default background color for the body */
+body {
+    margin: 0;
+    background-color: #e9e9e9; /* Light gray background */
+}
+
+/* Header */
+
+/* Logo */
+/* Centering the logo with proper spacing */
+.logo { 
+    display: flex;
+    justify-content: center;
+    margin: 3.125rem 0; /* Vertical spacing above and below the logo */
+}
+
+/* Styling the logo image for responsiveness */
+.logo img {
+    max-width: 12.5rem; /* Maximum width of the logo */
+    width: 100%; /* Ensures the logo scales responsively */
+    height: auto; /* Maintains the aspect ratio */
+}
+
+/* Navigation Bar */
+/* Ensuring the navigation bar does not scroll */
+nav {
+    overflow: hidden;
+}
+
+/* Removing bullet points and centering the navigation items */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* Adjusting spacing between navigation items */
+nav ul li {
+    padding: 0.125rem 5rem;
+}
+
+/* Styling navigation links: removing underline and setting text color */
+nav ul li a {
+    color: black; /* Text color */
+    text-decoration: none; /* No underline */
+    display: block; /* Ensures clickable area covers the entire item */
+}
+
+/* Font Text Styles */
+/* Styling headings (h1, h2) with Protest Guerrilla font */
+h1, h2 {
+    font-family: "Protest Guerrilla", serif;
+    font-weight: 400; /* Normal weight */
+    font-style: normal;
+}
+
+/* Styling paragraphs and footer with Josefin Sans font */
+p, footer {
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto; /* Adjusts letterforms for readability */
+    font-weight: 300; /* Light weight */
+    font-style: normal;
+}
+
+/* Main Content */
+
+/* Styling the main container */
+main {
+    max-width: 90rem; /* Maximum width of the container */
+    width: 80%; /* Adaptive width */
+    background-color: white; /* White background for contrast */
+    margin: 3rem auto; /* Centered with top/bottom spacing */
+    border: 2px solid black; /* Solid black border */
+    position: relative; /* Allows for absolute positioning of child elements */
+}
+
+/* Container inside the main content */
+main .container {
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Stacked items */
+}
+
+/* Styling the first article */
+main article {
+    width: 70%; /* Takes up 70% of the main container width */
+    padding: 3rem; /* Internal spacing */
+}
+
+/* Font size adjustments for article headings */
+main article h1 {
+    font-size: 75px;
+}
+
+main article h2 {
+    font-size: 30px;
+}
+
+/* Styling article paragraphs */
+main article p {
+    font-size: larger;
+    word-spacing: 5px; /* Extra space between words */
+}
+
+/* Section Container */
+/* Styling for sections with columns */
+.section-container {
+    column-count: 3; /* Divides content into 3 columns */
+    gap: 5px; /* Spacing between columns */
+    margin: 1rem 2rem; /* External spacing */
+    word-spacing: 0.2rem; /* Adjusted word spacing */
+}
+
+/* Font size adjustments for section headings */
+.section-container section h1 {
+    font-size: 40px;
+    margin: 1rem auto;
+}
+
+/* Font size adjustments for section paragraphs */
+.section-container section p {
+    font-size: 18px;
+}
+
+/* Images */
+
+/* Styling for the image grid */
+.images {
+    --gap: 0.1rem; /* Variable for grid gap */
+    --num-cols: 4; /* Variable for number of columns */
+    --row-height: 15rem; /* Variable for row height */
+
+    box-sizing: border-box; /* Ensures padding is included in dimensions */
+    padding: var(--gap); /* Padding defined by the gap variable */
+
+    display: grid; /* Grid layout for images */
+    grid-template-columns: repeat(var(--num-cols), 1fr); /* Defines column structure */
+    grid-auto-rows: var(--row-height); /* Defines row height */
+    gap: var(--gap); /* Space between grid items */
+}
+
+/* Styling individual images */
+.images > img {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Ensures image fills the grid cell */
+}
+
+/* Styling specific images to span multiple columns/rows */
+.images-col-2 {
+    grid-column: span 2; /* Spans 2 columns */
+}
+
+.images-row-2 {
+    grid-row: span 2; /* Spans 2 rows */
+}
+
+/* Hiding specific images */
+.hide {
+    display: none; /* Makes element invisible */
+}
+
+/* Aside Section */
+
+/* Flex layout for profile picture and text */
+.aside {
+    display: flex;
+    flex-direction: row-reverse; /* Reverses the order of content */
+    align-items: center; /* Aligns items vertically */
+    justify-content: center; /* Centers items horizontally */
+    gap: 20px; /* Space between items */
+    margin: 3rem; /* External spacing */
+}
+
+/* Styling for the profile picture */
+.aside img {
+    max-width: 200px; /* Limits the size */
+    border-radius: 50%; /* Makes the image circular */
+}
+
+/* Styling for text in the aside section */
+.aside-text {
+    padding: 1rem; /* Internal spacing */
+}
+
+/* Center-aligning heading text */
+.aside-text h2 {
+    text-align: center;
+    font-size: 35px;
+}
+
+/* Justifying paragraph text */
+.aside-text p {
+    text-align: justify; /* Aligns text to both left and right margins */
+    font-size: 18px;
+}
+
+/* Footer */
+
+/* Styling the footer container */
+.foot {
+    border: 0.5px solid black; /* Thin border */
+    display: flex; /* Flexbox layout */
+    align-items: center; /* Vertically centers items */
+    justify-content: center; /* Horizontally centers items */
+}
+
+/* Footer text padding */
+.foot footer {
+    padding: 50px;
+}
+
+/* Media Queries */
+
+/* Tablet Screen (max-width: 720px) */
+/* Adjustments for smaller screens like tablets */
+@media screen and (max-width: 720px) {
+    .logo img {
+        max-width: 5rem; /* Smaller logo */
+    }
+
+    nav ul li {
+        padding: 0.125rem 3.5rem; /* Adjust spacing */
+    }
+
+    main {
+        width: 100%; /* Full-width main container */
+        margin: 3.5rem auto; /* Adjusted spacing */
+    }
+
+    .section-container {
+        columns: 1; /* Single column */
+        margin: 0.25rem 1rem; /* Adjusted margin */
+        text-align: center; /* Center-align text */
+    }
+
+    .images {
+        --num-cols: 2; /* Fewer columns */
+        --row-height: 14rem; /* Reduced row height */
+    }
+}
+
+/* Large Mobile (max-width: 540px) */
+@media screen and (max-width: 540px) {
+    .logo img {
+        max-width: 4rem; /* Smaller logo */
+    }
+    /* Additional styles */
+}
+
+/* Small Mobile (max-width: 360px) */
+@media screen and (max-width: 360px) {
+    .logo img {
+        max-width: 3rem; /* Smallest logo */
+    }
+    /* Additional styles */
+}
