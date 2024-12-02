@@ -1,0 +1,202 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fonts and Body Styling */
+body {
+  font-family: 'Lato', sans-serif;
+  line-height: 1.6;
+  background-color: #e9e9e9; /* Neutral background */
+  color: #333;
+  margin: 0;
+}
+
+.search-btn{
+  align-items: center;
+}
+
+/* Header */
+header {
+  background-color: #14181d;
+  color: white;
+  padding: 16px 16px; /* Small spacing on mobile */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-family: 'Teko', sans-serif;
+  font-size: 2em; /* Mobile default */
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 16px; /* Small spacing */
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Lato', sans-serif;
+  transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+  color: #f0a500; /* Brand highlight color */
+}
+
+/* Main Content Container */
+.container {
+  max-width: 900px;
+  margin: 32px auto; /* Centered with large spacing */
+  padding: 16px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Typography */
+h2 {
+  font-family: 'Teko', sans-serif;
+  font-size: 1.5em; /* Adjusts with responsive styling */
+  margin-bottom: 16px;
+  color: #222;
+}
+
+p {
+  margin-bottom: 16px;
+}
+
+/* Movie Grid */
+.movie-grid {
+  display: grid;
+  gap: 16px; /* Small spacing */
+  grid-template-columns: 1fr; /* Single column on mobile */
+}
+
+.movie-box {
+  background-color: #191919;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+p{
+  color: rgb(14, 126, 111);
+}
+
+h2{
+  color: #ededed;
+}
+.movie-box img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.movie-box h2 {
+  font-size: 1.5em;
+}
+
+.feature{
+  color: #14181d;
+}
+
+.movie-box button {
+  font-family: 'Teko', sans-serif;
+  font-size: 2em; /* Matches spec */
+  color: white;
+  background-color: #f0a500;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px; /* Small spacing */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: black;
+}
+
+.movie-box button:hover {
+  background-color: #c58000;
+}
+
+/* Footer */
+footer {
+  background-color: #14181d;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  font-size: 0.9em;
+}
+
+/* Responsive Styling */
+
+/* Mobile: 360px - 720px */
+@media (max-width: 720px) {
+  header h1 {
+      font-size: 2em;
+  }
+
+  .container {
+      padding: 16px;
+  }
+
+  .movie-grid {
+      grid-template-columns: 1fr; /* Single column */
+  }
+}
+
+/* Tablet: 720px - 1024px */
+@media (min-width: 720px) and (max-width: 1024px) {
+  header h1 {
+      font-size: 3em;
+  }
+
+  .container {
+      padding: 32px; /* Large spacing for tablet */
+  }
+
+  .movie-grid {
+      grid-template-columns: repeat(2, 1fr); /* Two columns */
+      gap: 16px; /* Small spacing */
+  }
+
+  .movie-box h2 {
+      font-size: 1.5em;
+  }
+
+  .movie-box button {
+      font-size: 2em;
+  }
+}
+
+/*ayout for Desktop (1024px and up) */
+@media (min-width: 1024px) {
+  .movie-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 16px; /* Small spacing */
+  }
+
+  .movie-grid .movie-box:nth-child(1) {
+    grid-column: span 2; /* First movie spans both columns */
+  }
+
+  .movie-grid .movie-box:nth-child(2),
+  .movie-grid .movie-box:nth-child(3) {
+    grid-column: span 1; /* Second and third movies are side by side */
+  }
+
+  .movie-grid .movie-box:nth-child(4),
+  .movie-grid .movie-box:nth-child(5),
+  .movie-grid .movie-box:nth-child(6) {
+    grid-column: span 2; /* Remaining movies take full width */
+  }
+}
+
