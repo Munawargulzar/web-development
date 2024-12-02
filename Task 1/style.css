@@ -1,271 +1,263 @@
-/* Fonts */
-/* Importing fonts from Google Fonts: Josefin Sans and Protest Guerrilla */
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@0;1&family=Protest+Guerrilla&display=swap');
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Protest+Guerrilla&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
-/* Default Body Styles */
-/* Resetting margins and padding for all elements */
+/* Resetting Default Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Setting default background color for the body */
+/* Global Styles */
 body {
-    margin: 0;
-    background-color: #e9e9e9; /* Light gray background */
-}
-
-/* Header */
-
-/* Logo */
-/* Centering the logo with proper spacing */
-.logo { 
-    display: flex;
-    justify-content: center;
-    margin: 3.125rem 0; /* Vertical spacing above and below the logo */
-}
-
-/* Styling the logo image for responsiveness */
-.logo img {
-    max-width: 12.5rem; /* Maximum width of the logo */
-    width: 100%; /* Ensures the logo scales responsively */
-    height: auto; /* Maintains the aspect ratio */
-}
-
-/* Navigation Bar */
-/* Ensuring the navigation bar does not scroll */
-nav {
-    overflow: hidden;
-}
-
-/* Removing bullet points and centering the navigation items */
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-/* Adjusting spacing between navigation items */
-nav ul li {
-    padding: 0.125rem 5rem;
-}
-
-/* Styling navigation links: removing underline and setting text color */
-nav ul li a {
-    color: black; /* Text color */
-    text-decoration: none; /* No underline */
-    display: block; /* Ensures clickable area covers the entire item */
-}
-
-/* Font Text Styles */
-/* Styling headings (h1, h2) with Protest Guerrilla font */
-h1, h2 {
-    font-family: "Protest Guerrilla", serif;
-    font-weight: 400; /* Normal weight */
+    background-color: #e9e9e9;
+    font-family: "Josefin Sans", serif;
     font-style: normal;
 }
 
-/* Styling paragraphs and footer with Josefin Sans font */
-p, footer {
-    font-family: "Josefin Sans", sans-serif;
-    font-optical-sizing: auto; /* Adjusts letterforms for readability */
-    font-weight: 300; /* Light weight */
+/* Styling for Headings */
+h1,
+h2 {
+    font-family: "Protest Guerrilla", sans-serif;
     font-style: normal;
 }
 
-/* Main Content */
-
-/* Styling the main container */
-main {
-    max-width: 90rem; /* Maximum width of the container */
-    width: 80%; /* Adaptive width */
-    background-color: white; /* White background for contrast */
-    margin: 3rem auto; /* Centered with top/bottom spacing */
-    border: 2px solid black; /* Solid black border */
-    position: relative; /* Allows for absolute positioning of child elements */
+/* Header Section Styling */
+header {
+    max-width: 64rem;
+    margin: 0 auto;
+    padding: 50px 0;
 }
 
-/* Container inside the main content */
-main .container {
-    display: flex; /* Flexbox layout */
-    flex-direction: column; /* Stacked items */
+ul {
+    list-style: none;
 }
 
-/* Styling the first article */
-main article {
-    width: 70%; /* Takes up 70% of the main container width */
-    padding: 3rem; /* Internal spacing */
+a {
+    text-decoration: none;
+    color: black;
 }
 
-/* Font size adjustments for article headings */
-main article h1 {
-    font-size: 75px;
+/* Main Content Container */
+.main-container {
+    max-width: 64rem;
+    margin: 0 auto;
+    background-color: white;
 }
 
-main article h2 {
-    font-size: 30px;
-}
-
-/* Styling article paragraphs */
-main article p {
-    font-size: larger;
-    word-spacing: 5px; /* Extra space between words */
-}
-
-/* Section Container */
-/* Styling for sections with columns */
-.section-container {
-    column-count: 3; /* Divides content into 3 columns */
-    gap: 5px; /* Spacing between columns */
-    margin: 1rem 2rem; /* External spacing */
-    word-spacing: 0.2rem; /* Adjusted word spacing */
-}
-
-/* Font size adjustments for section headings */
-.section-container section h1 {
-    font-size: 40px;
-    margin: 1rem auto;
-}
-
-/* Font size adjustments for section paragraphs */
-.section-container section p {
-    font-size: 18px;
-}
-
-/* Images */
-
-/* Styling for the image grid */
-.images {
-    --gap: 0.1rem; /* Variable for grid gap */
-    --num-cols: 4; /* Variable for number of columns */
-    --row-height: 15rem; /* Variable for row height */
-
-    box-sizing: border-box; /* Ensures padding is included in dimensions */
-    padding: var(--gap); /* Padding defined by the gap variable */
-
-    display: grid; /* Grid layout for images */
-    grid-template-columns: repeat(var(--num-cols), 1fr); /* Defines column structure */
-    grid-auto-rows: var(--row-height); /* Defines row height */
-    gap: var(--gap); /* Space between grid items */
-}
-
-/* Styling individual images */
-.images > img {
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    object-fit: cover; /* Ensures image fills the grid cell */
-}
-
-/* Styling specific images to span multiple columns/rows */
-.images-col-2 {
-    grid-column: span 2; /* Spans 2 columns */
-}
-
-.images-row-2 {
-    grid-row: span 2; /* Spans 2 rows */
-}
-
-/* Hiding specific images */
-.hide {
-    display: none; /* Makes element invisible */
-}
-
-/* Aside Section */
-
-/* Flex layout for profile picture and text */
-.aside {
+/* Navigation and Header Elements */
+.header-box {
     display: flex;
-    flex-direction: row-reverse; /* Reverses the order of content */
-    align-items: center; /* Aligns items vertically */
-    justify-content: center; /* Centers items horizontally */
-    gap: 20px; /* Space between items */
-    margin: 3rem; /* External spacing */
+    justify-content: space-between;
 }
 
-/* Styling for the profile picture */
-.aside img {
-    max-width: 200px; /* Limits the size */
-    border-radius: 50%; /* Makes the image circular */
+/* Section Content Styling */
+.section-tapes {
+    margin: 0 50px 50px 50px;
+    padding-top: 50px;
 }
 
-/* Styling for text in the aside section */
-.aside-text {
-    padding: 1rem; /* Internal spacing */
+.sectionn-p-1 {
+    margin-bottom: 50px;
 }
 
-/* Center-aligning heading text */
-.aside-text h2 {
+/* Typography Adjustments */
+h1 {
+    font-size: 3rem;
+}
+
+.h2-heading {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+}
+
+/* Multi-Column Text Layout */
+#paragraphs {
+    column-count: 3;
+    column-gap: 50px;
+}
+
+/* Logo Styling */
+.logo-header {
     text-align: center;
-    font-size: 35px;
 }
 
-/* Justifying paragraph text */
-.aside-text p {
-    text-align: justify; /* Aligns text to both left and right margins */
-    font-size: 18px;
+.logo-header img {
+    width: 12.5rem;
 }
 
-/* Footer */
-
-/* Styling the footer container */
-.foot {
-    border: 0.5px solid black; /* Thin border */
-    display: flex; /* Flexbox layout */
-    align-items: center; /* Vertically centers items */
-    justify-content: center; /* Horizontally centers items */
+/* Paragraph and Heading Spacing in Text Sections */
+#paragraphs h2 {
+    font-size: 3rem;
+    margin-bottom: 50px;
 }
 
-/* Footer text padding */
-.foot footer {
+#paragraphs p {
+    margin-bottom: 50px;
+}
+
+/* Image Section Layout */
+.image-div {
+    display: flex;
+}
+
+.right {
+    flex-basis: 50%;
+}
+
+.Image-bigg {
+    flex-basis: 50%;
+}
+
+.Image-bigg img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Author Section Styling */
+.auth-box {
+    display: flex;
+    justify-content: center;
+    padding: 50px 50px;
+    column-gap: 50px;
+    align-items: center;
+}
+
+.author-txxt {
+    flex-basis: 70%;
+}
+
+.author-heading {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.author-pic {
+    border-radius: 50%;
+    flex-basis: 30%;
+    width: 12.5rem;
+}
+
+/* Grid Layout for Images */
+.image-div-grid {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 50% 50%;
+}
+
+.image-div-grid img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #14181d;
+    color: white;
+    max-width: 64rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
     padding: 50px;
 }
 
-/* Media Queries */
-
-/* Tablet Screen (max-width: 720px) */
-/* Adjustments for smaller screens like tablets */
-@media screen and (max-width: 720px) {
-    .logo img {
-        max-width: 5rem; /* Smaller logo */
+/* Media Queries for Responsive Design */
+@media screen and (min-width: 720px) and (max-width: 1024px) {
+    /* Adjust Logo and Author Section for Tablets */
+    .logo-header img {
+        width: 50px;
     }
 
-    nav ul li {
-        padding: 0.125rem 3.5rem; /* Adjust spacing */
+    .author-picture-flex {
+        padding: 30px 30px;
+        column-gap: 30px;
     }
 
-    main {
-        width: 100%; /* Full-width main container */
-        margin: 3.5rem auto; /* Adjusted spacing */
+    /* Adjust Columns for Smaller Screens */
+    #paragraphs {
+        column-count: 1;
+        text-align: left;
     }
 
-    .section-container {
-        columns: 1; /* Single column */
-        margin: 0.25rem 1rem; /* Adjusted margin */
-        text-align: center; /* Center-align text */
+    #paragraphs h2,
+    h1,
+    .h2-heading {
+        display: flex;
+        justify-content: center;
     }
 
-    .images {
-        --num-cols: 2; /* Fewer columns */
-        --row-height: 14rem; /* Reduced row height */
+    .Image-bigg img {
+        display: none;
+    }
+
+    .image-div {
+        flex-direction: column;
+    }
+
+    .right {
+        flex-basis: 100%;
+    }
+
+    footer {
+        padding: 30px;
     }
 }
 
-/* Large Mobile (max-width: 540px) */
-@media screen and (max-width: 540px) {
-    .logo img {
-        max-width: 4rem; /* Smaller logo */
+@media screen and (min-width: 540px) and (max-width: 720px) {
+    /* Adjust Styles for Small Tablets */
+    .logo-header img {
+        width: 5rem;
     }
-    /* Additional styles */
+
+    .image-div {
+        flex-direction: column;
+    }
+
+    .image-div-grid {
+        grid-template-rows: 25%;
+        grid-template-columns: 1fr;
+    }
+
+    .Image-bigg img {
+        display: none;
+    }
+
+    .auth-box {
+        flex-direction: column-reverse;
+    }
+
+    footer {
+        padding: 20px;
+    }
 }
 
-/* Small Mobile (max-width: 360px) */
-@media screen and (max-width: 360px) {
-    .logo img {
-        max-width: 3rem; /* Smallest logo */
+@media screen and (min-width: 360px) and (max-width: 540px) {
+    /* Adjust Layout for Mobile Phones */
+    .logo-header img {
+        width: 5rem;
     }
-    /* Additional styles */
+
+    #paragraphs {
+        column-count: 1;
+        text-align: left;
+    }
+
+    .Image-bigg img {
+        display: none;
+    }
+
+    .image-div-grid {
+        grid-template-rows: 25%;
+        grid-template-columns: 1fr;
+    }
+
+    .auth-box {
+        flex-direction: column-reverse;
+    }
+
+    footer {
+        padding: 12px;
+    }
 }
